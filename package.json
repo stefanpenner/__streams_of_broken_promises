@@ -6,11 +6,13 @@
   "dependencies": {
     "execa": "^4.0.2",
     "mocha": "^8.0.1",
+    "rsvp": "^4.8.5",
+    "stream.pipeline-shim": "^1.1.0",
     "tar-fs": "^2.1.0",
     "through2": "^3.0.1"
   },
   "volta": {
-    "node": "14.4.0",
+    "node": "12.15.0",
     "yarn": "1.22.4"
   },
   "scripts": {

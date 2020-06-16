@@ -2,20 +2,17 @@
 
 const zlib = require('zlib');
 const fs = require('fs');
+const pipeline = require('stream.pipeline-shim');
+const { promisify } = require('util');
+const pipe = promisify(pipeline);
 
 process.exitCode = 1;
-
 (async () => {
   const file = fs.createReadStream(__filename);
-  fs.writeFileSync(`${__filename}-out.js`)
 
   const stream = file.pipe(new zlib.Gzip());
 
-  await new Promise((resolve, reject) => {
-    stream.pipe(fs.createWriteStream(`${__filename}-out.js`));
-    stream.on('error', reject);
-    stream.on('close', resolve);
-  });
+  await pipe(stream, fs.createWriteStream(`${__filename}-out.js`));
 
   console.log(`${process.version} ${__filename} success`);
   process.exitCode = 0;

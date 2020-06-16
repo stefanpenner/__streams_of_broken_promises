@@ -14,9 +14,6 @@ process.exitCode = 1;
 
   await pipe(stream, fs.createWriteStream(`${__filename}-out.js`));
 
-  console.log(`${__filename} success`);
+  console.log(`${process.version} ${__filename} success`);
   process.exitCode = 0;
 })();
-
-
-
