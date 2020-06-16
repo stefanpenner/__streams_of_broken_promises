@@ -30,13 +30,14 @@ const execa = require('execa');
 '14.3.0',
 '14.4.0',
   ]) {
-    const { exitCode,  stdout }  = await execa('volta', [
+    const args = [
       'run',
       '--node',
       version,
       'npm',
       'test',
-    ], {
+    ]
+    const { exitCode,  stdout }  = await execa('volta', args, {
       all: true,
       reject: false
     });
@@ -46,6 +47,7 @@ const execa = require('execa');
     exitCodes.push({
       version,
       exitCode,
+      command: `volta ${args.join(' ')}`,
     });
   }
 

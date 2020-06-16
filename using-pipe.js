@@ -7,7 +7,6 @@ process.exitCode = 1;
 
 (async () => {
   const file = fs.createReadStream(__filename);
-  fs.writeFileSync(`${__filename}-out.js`)
 
   const stream = file.pipe(new zlib.Gzip());
 
