@@ -1,0 +1,20 @@
+{
+  "name": "pack-issue-2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "execa": "^4.0.2",
+    "mocha": "^8.0.1",
+    "tar-fs": "^2.1.0",
+    "through2": "^3.0.1"
+  },
+  "volta": {
+    "node": "12.15.0"
+  },
+  "scripts": {
+    "test:all": "./runner.js",
+    "test": "mocha tests.js",
+    "test:debug": "mocha debug tests.js"
+  }
+}
