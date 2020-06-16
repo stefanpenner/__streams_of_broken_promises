@@ -10,11 +10,12 @@
     "through2": "^3.0.1"
   },
   "volta": {
-    "node": "12.15.0"
+    "node": "12.15.0",
+    "yarn": "1.22.4"
   },
   "scripts": {
     "test:all": "./runner.js",
-    "test": "mocha tests.js",
-    "test:debug": "mocha debug tests.js"
+    "test": "mocha --color tests.js",
+    "test:debug": "mocha --color debug tests.js"
   }
 }
