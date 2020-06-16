@@ -1,6 +1,8 @@
 process.exitCode = 1;
 const fs = require('fs');
 
+process.exitCode = 1;
+
 (async function main () {
   const file = fs.createReadStream(__filename);
 

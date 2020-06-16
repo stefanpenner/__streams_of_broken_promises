@@ -1,8 +1,9 @@
-const { Promise } = require('rsvp')
+'use strict';
+
 process.exitCode = 1;
 
 (async function main () {
-  await new Promise(resolve => { });
+  await new Promise(resolve => setImmediate(resolve));
   process.exitCode = 0;
   console.log(`${process.version} ${__filename} success`);
 })();

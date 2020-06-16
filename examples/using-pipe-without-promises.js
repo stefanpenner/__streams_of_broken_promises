@@ -3,8 +3,9 @@
 const zlib = require('zlib');
 const fs = require('fs');
 
+process.exitCode = 1;
+
 const file = fs.createReadStream(__filename);
-fs.writeFileSync(`${__filename}-out.js`)
 
 const stream = file.pipe(new zlib.Gzip());
 stream.pipe(fs.createWriteStream(`${__filename}-out.js`));
